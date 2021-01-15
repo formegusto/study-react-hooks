@@ -1,13 +1,11 @@
 import React from 'react';
-import CountComponent from './ContextHook/CountComponent';
-import CountContainer from './ContextHook/CountContainer';
-import InputComponent from './ReducerHook/InputComponent';
+import AverageComponent from './MemoHook/AverageComponent';
 
 function App() {
 
   return (
     <>
-      <InputComponent />
+      <AverageComponent />
     </>
   );
 }
