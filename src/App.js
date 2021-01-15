@@ -1,17 +1,14 @@
-import React, { useCallback, useState } from 'react';
-import InfoComponent from './InfoComponent';
+import React from 'react';
+import CountComponent from './ContextHook/CountComponent';
+import CountContainer from './ContextHook/CountContainer';
 
 function App() {
-  const [visible, setVisible] = useState(true);
-
-  const changeVisible = useCallback(() => {
-    setVisible(!visible);
-  }, [setVisible, visible]);
 
   return (
     <>
-      <button type="button" onClick={changeVisible}>toggle</button>
-      {visible && <InfoComponent />}
+      <CountContainer>
+        <CountComponent />
+      </CountContainer>
     </>
   );
 }

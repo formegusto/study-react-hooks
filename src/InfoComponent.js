@@ -5,7 +5,10 @@ function InfoComponent() {
     const [nickname, setNickname] = useState('');
 
     useEffect(() => {
-        console.log('첫 렌더링 시에만 호출 됩니다.')
+        console.log('첫 렌더링 시에만 호출 됩니다.');
+        return () => {
+            console.log('언 마운트 시에만 호출 됩니다.')
+        }
     }, []);
 
     useEffect(() => {
@@ -14,12 +17,6 @@ function InfoComponent() {
             console.log(`name:${name} 설정 전에 호출 됩니다.`);
         }
     }, [name]);
-
-    useEffect(() => {
-        return () => {
-            console.log('언 마운트 시에만 호출 됩니다.')
-        }
-    }, []);
 
     const onChangeName = useCallback((e) => {
         setName(e.target.value);
