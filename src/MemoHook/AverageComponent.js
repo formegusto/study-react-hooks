@@ -14,12 +14,12 @@ function AverageComponent() {
 
     const onChange = useCallback((e) => {
         setInput(e.target.value);
-    }, [setInput]);
+    }, []);
 
     const onInsert = useCallback(() => {
         setList(list.concat(parseInt(input)));
         setInput('');
-    }, [setList, setInput, input, list]);
+    }, [input, list]);
 
     const avg = useMemo(() => getAverage(list),[list]);
 
